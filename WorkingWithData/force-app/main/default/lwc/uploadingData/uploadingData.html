@@ -1,0 +1,27 @@
+<!-- <template>
+    <lightning-card title="Uploading info">
+        <div><p>Choose file to upload</p><input type="file" accept=".csv" onchange={HandleData}></input></div>
+    <div><button onclick={UploadData}>Upload</button></div>
+    </lightning-card>
+    <span>Result</span>
+</template> -->
+<template>
+    <lightning-card title="Uploading info"  icon-name="utility:connected_apps">
+    <div class="slds-m-around_medium">
+        <lightning-input label="Choose file to upload" type="file" accept=".csv" onchange={HandleData} required message-when-value-missing="Please upload a file"></lightning-input>
+        <lightning-button variant="brand" label="Upload" title="Primary action" onclick={UploadingData} class="slds-m-left_x-small"></lightning-button>
+    </div>
+    <div style="height: 300px;">
+        <lightning-datatable
+                data={data}
+                columns={columns}
+                key-field="id"
+                hide-checkbox-column
+                >
+        </lightning-datatable>
+    </div>    
+    <div class="slds-m-vertical_medium">
+        <p>The label of the button that was clicked is: <span class="slds-text-heading_small">{clickedButtonLabel}</span></p>
+    </div>
+    </lightning-card>
+</template>
